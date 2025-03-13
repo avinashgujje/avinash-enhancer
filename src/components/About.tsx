@@ -58,8 +58,8 @@ const About = () => {
             </div>
             
             <div className="animate-on-scroll opacity-0 relative">
-              <div className="aspect-square rounded-2xl overflow-hidden shadow-lg glow relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-background z-10"></div>
+              <div className="aspect-square rounded-2xl overflow-hidden shadow-xl relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-background/80 z-10"></div>
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1531297484001-80022131f5a1')] bg-cover bg-center transform hover:scale-105 transition-transform duration-700"></div>
               </div>
             </div>
@@ -74,7 +74,7 @@ const About = () => {
             ].map((stat, index) => (
               <div 
                 key={index} 
-                className="animate-on-scroll opacity-0 p-6 rounded-xl bg-secondary/50 backdrop-blur-sm text-center transform hover:translate-y-[-4px] transition-transform duration-300"
+                className="animate-on-scroll opacity-0 p-6 rounded-xl bg-card/50 backdrop-blur-sm text-center transform hover:translate-y-[-4px] transition-transform duration-300"
                 style={{ animationDelay: `${0.1 * index}s` }}
               >
                 <h3 className="text-3xl font-bold text-primary mb-2">{stat.value}</h3>

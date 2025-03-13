@@ -29,7 +29,7 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center grain overflow-hidden pt-20 pb-24">
-      <div className="absolute inset-0 bg-gradient-to-b from-background to-background/20 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background/80 pointer-events-none" />
       
       <div className="container px-6 md:px-8 mx-auto relative z-10" ref={containerRef}>
         <div className="max-w-3xl mx-auto text-center">
@@ -37,7 +37,7 @@ const Hero = () => {
             className="inline-block mb-4 opacity-0 animate-fade-in" 
             style={{ animationDelay: '0.2s' }}
           >
-            <span className="px-4 py-1.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
+            <span className="px-4 py-1.5 rounded-full text-xs font-medium bg-primary/20 text-primary">
               Software Engineer
             </span>
           </div>
@@ -68,7 +68,7 @@ const Hero = () => {
             </a>
             <a 
               href="#experience" 
-              className="px-6 py-3 rounded-full bg-secondary text-secondary-foreground font-medium hover:bg-secondary/80 transition-all duration-300 w-full sm:w-auto"
+              className="px-6 py-3 rounded-full bg-card text-foreground font-medium border border-border/30 hover:bg-card/80 transition-all duration-300 w-full sm:w-auto"
             >
               View My Work
             </a>
@@ -76,7 +76,7 @@ const Hero = () => {
         </div>
         
         <div 
-          className="absolute bottom-[-260px] left-1/2 transform -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-[100px] bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 opacity-0 animate-fade-in-slow"
+          className="absolute bottom-[-260px] left-1/2 transform -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-[100px] bg-gradient-to-r from-primary/30 via-accent/20 to-primary/20 opacity-0 animate-fade-in-slow"
           style={{ animationDelay: '1s' }}
         />
       </div>
