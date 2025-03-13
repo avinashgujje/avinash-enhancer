@@ -1,35 +1,43 @@
 
 import React, { useEffect, useRef } from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const skillCategories = [
   {
-    title: "Frontend",
+    id: "frontend",
+    name: "Frontend",
     skills: [
       { name: "React", level: 90 },
-      { name: "JavaScript", level: 95 },
       { name: "TypeScript", level: 85 },
+      { name: "JavaScript", level: 95 },
       { name: "HTML/CSS", level: 90 },
-      { name: "NextJS", level: 80 }
+      { name: "Next.js", level: 80 },
+      { name: "Tailwind CSS", level: 85 }
     ]
   },
   {
-    title: "Backend",
+    id: "backend",
+    name: "Backend",
     skills: [
       { name: "Node.js", level: 85 },
-      { name: "Python", level: 80 },
-      { name: "Java", level: 75 },
-      { name: "Go", level: 70 },
-      { name: "SQL", level: 85 }
+      { name: "Express", level: 80 },
+      { name: "Python", level: 75 },
+      { name: "Django", level: 70 },
+      { name: "Java", level: 65 },
+      { name: "SQL", level: 80 }
     ]
   },
   {
-    title: "DevOps & Tools",
+    id: "tools",
+    name: "Tools & Others",
     skills: [
-      { name: "Docker", level: 80 },
-      { name: "AWS", level: 75 },
-      { name: "Git", level: 90 },
-      { name: "CI/CD", level: 85 },
-      { name: "Linux", level: 80 }
+      { name: "Git/GitHub", level: 90 },
+      { name: "Docker", level: 75 },
+      { name: "AWS", level: 70 },
+      { name: "CI/CD", level: 80 },
+      { name: "RESTful APIs", level: 85 },
+      { name: "GraphQL", level: 70 }
     ]
   }
 ];
@@ -42,15 +50,22 @@ const Skills = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-slide-up');
-            observer.unobserve(entry.target);
+            entry.target.classList.add('visible');
+            
+            // Animate skill bars
+            const skillBars = entry.target.querySelectorAll('.skill-bar');
+            skillBars.forEach((bar, index) => {
+              setTimeout(() => {
+                bar.classList.add('animate');
+              }, index * 100);
+            });
           }
         });
       },
       { threshold: 0.1 }
     );
     
-    const elements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
+    const elements = sectionRef.current?.querySelectorAll('.section-fade-in');
     elements?.forEach((el) => observer.observe(el));
     
     return () => {
@@ -59,78 +74,68 @@ const Skills = () => {
   }, []);
 
   return (
-    <section id="skills" ref={sectionRef} className="py-24 relative overflow-hidden">
-      <div className="container px-6 md:px-8 mx-auto relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="animate-on-scroll opacity-0 mb-4">
-              <span className="text-sm font-medium text-primary">Technology Stack</span>
-            </div>
-            <h2 className="animate-on-scroll opacity-0 text-3xl md:text-4xl font-bold tracking-tight">
-              Skills & Expertise
-            </h2>
-            <p className="animate-on-scroll opacity-0 mt-4 text-foreground/70 max-w-2xl mx-auto">
-              I've worked with a wide range of technologies throughout my career, continuously expanding my skill set to deliver exceptional solutions.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {skillCategories.map((category, catIndex) => (
-              <div 
-                key={catIndex}
-                className="animate-on-scroll opacity-0 rounded-xl p-6 bg-secondary/50 backdrop-blur-sm shadow-sm border"
-                style={{ animationDelay: `${0.1 * catIndex}s` }}
-              >
-                <h3 className="text-xl font-semibold mb-6 text-center">{category.title}</h3>
-                <div className="space-y-5">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-2">
+    <section id="skills" ref={sectionRef} className="py-20 bg-secondary/50">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto mb-12 text-center">
+          <h2 className="section-fade-in text-3xl font-bold mb-4">Skills & Expertise</h2>
+          <div className="section-fade-in h-1 w-20 bg-primary mx-auto mb-6"></div>
+          <p className="section-fade-in text-muted-foreground">
+            My technical skills and professional competencies
+          </p>
+        </div>
+        
+        <div className="section-fade-in max-w-4xl mx-auto">
+          <Tabs defaultValue="frontend" className="w-full">
+            <TabsList className="grid grid-cols-3 mb-8">
+              {skillCategories.map((category) => (
+                <TabsTrigger key={category.id} value={category.id} className="text-sm">
+                  {category.name}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+            
+            {skillCategories.map((category) => (
+              <TabsContent key={category.id} value={category.id} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {category.skills.map((skill, index) => (
+                    <div key={index} className="space-y-2">
                       <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium">{skill.name}</span>
-                        <span className="text-xs text-foreground/60">{skill.level}%</span>
+                        <h4 className="font-medium">{skill.name}</h4>
+                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
                       </div>
-                      <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
+                      <div className="h-2 bg-muted rounded-full overflow-hidden relative">
                         <div 
-                          className="h-full bg-primary rounded-full transform origin-left transition-transform duration-1000"
-                          style={{ transform: `scaleX(${skill.level / 100})` }}
-                        />
+                          className="skill-bar absolute top-0 left-0 h-full rounded-full"
+                          style={{ '--skill-value': `${skill.level}%` } as React.CSSProperties}
+                        ></div>
                       </div>
                     </div>
                   ))}
                 </div>
-              </div>
+              </TabsContent>
             ))}
-          </div>
-          
-          <div className="animate-on-scroll opacity-0 mt-16 flex justify-center">
-            <div className="p-6 md:p-8 rounded-xl bg-background border shadow-sm max-w-3xl">
-              <div className="text-center mb-8">
-                <h3 className="text-xl font-semibold mb-2">My Approach to Technology</h3>
-                <p className="text-foreground/70">
-                  I believe in choosing the right tool for the job, focusing on technologies that deliver the best balance of performance, developer experience, and long-term maintainability.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[
-                  "Problem Solving",
-                  "Clean Code",
-                  "Performance",
-                  "Scalability",
-                  "User Experience",
-                  "Best Practices",
-                  "Continuous Learning",
-                  "Team Collaboration"
-                ].map((value, index) => (
-                  <div 
-                    key={index}
-                    className="p-4 rounded-lg bg-secondary/70 text-center hover:bg-secondary transition-colors duration-300"
-                  >
-                    <span className="text-sm font-medium">{value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+          </Tabs>
+        </div>
+        
+        <div className="section-fade-in mt-16 max-w-4xl mx-auto">
+          <h3 className="text-xl font-semibold mb-6 text-center">Additional Competencies</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              "Problem Solving",
+              "Team Leadership",
+              "Agile Methodology",
+              "Project Management",
+              "UI/UX Design",
+              "Technical Writing",
+              "System Architecture",
+              "Performance Optimization"
+            ].map((skill, index) => (
+              <Card key={index} className="bg-card border-border/50">
+                <CardContent className="p-4 text-center">
+                  <p className="text-sm">{skill}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>

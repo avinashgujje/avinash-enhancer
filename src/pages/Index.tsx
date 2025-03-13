@@ -34,13 +34,34 @@ const Index = () => {
     
     document.addEventListener('click', handleAnchorClick);
     
+    // Initialize animations on page load
+    const initAnimations = () => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      
+      const elements = document.querySelectorAll('.section-fade-in');
+      elements.forEach((el) => observer.observe(el));
+    };
+    
+    // Initialize after a short delay to ensure DOM is fully loaded
+    setTimeout(initAnimations, 100);
+    
     return () => {
       document.removeEventListener('click', handleAnchorClick);
     };
   }, []);
 
   return (
-    <div className="min-h-screen grain bg-background">
+    <div className="min-h-screen bg-background">
       <Header />
       <main>
         <Hero />

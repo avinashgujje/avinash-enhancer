@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { X } from 'lucide-react';
+import { X, Menu } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -22,7 +23,14 @@ const Header = () => {
     };
   }, [scrolled]);
 
-  const menuItems = ['About', 'Experience', 'Skills', 'Projects', 'Contact'];
+  const menuItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' }
+  ];
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -31,74 +39,65 @@ const Header = () => {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 ease-in-out',
-        scrolled ? 'bg-background/90 backdrop-blur-lg border-b border-border/30' : 'bg-transparent'
+        'fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300',
+        scrolled ? 'bg-background/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'
       )}
     >
-      <div className="container mx-auto px-6 md:px-8 flex items-center justify-between">
-        <a href="#" className="text-xl font-medium tracking-tight opacity-90 hover:opacity-100 transition-opacity">
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        <a href="#home" className="text-xl font-bold tracking-tight hover:text-primary transition-colors">
           Avinash<span className="text-primary">.</span>
         </a>
         
         <nav className="hidden md:flex items-center space-x-8">
           {menuItems.map((item) => (
             <a 
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-sm text-foreground/80 hover:text-foreground transition-colors duration-200"
+              key={item.name}
+              href={item.href}
+              className="text-sm text-foreground/80 hover:text-primary transition-colors duration-200"
             >
-              {item}
+              {item.name}
             </a>
           ))}
-          <a 
-            href="#contact" 
-            className="text-sm px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200"
-          >
-            Get in Touch
-          </a>
+          <Button size="sm" asChild>
+            <a href="#contact">
+              Get in Touch
+            </a>
+          </Button>
         </nav>
         
-        <button 
-          className="md:hidden text-foreground/80 hover:text-foreground z-50"
+        <Button 
+          variant="ghost"
+          size="icon"
+          className="md:hidden"
           onClick={toggleMobileMenu}
-          aria-label="Toggle mobile menu"
+          aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-          )}
-        </button>
+          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </Button>
 
         {/* Mobile menu */}
         <div
           className={cn(
-            'fixed inset-0 bg-background/95 backdrop-blur-md flex flex-col items-center justify-center transition-all duration-300 md:hidden',
+            'fixed inset-0 bg-background/95 backdrop-blur-sm flex flex-col justify-center z-40 transition-all duration-300 md:hidden',
             mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
           )}
         >
-          <nav className="flex flex-col items-center space-y-8 py-8">
+          <nav className="flex flex-col items-center space-y-6 py-8">
             {menuItems.map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
+                key={item.name}
+                href={item.href}
+                className="text-lg font-medium text-foreground/80 hover:text-primary transition-colors duration-200"
                 onClick={toggleMobileMenu}
               >
-                {item}
+                {item.name}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="mt-4 px-6 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200"
-              onClick={toggleMobileMenu}
-            >
-              Get in Touch
-            </a>
+            <Button className="mt-4" onClick={toggleMobileMenu} asChild>
+              <a href="#contact">
+                Get in Touch
+              </a>
+            </Button>
           </nav>
         </div>
       </div>
