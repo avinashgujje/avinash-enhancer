@@ -3,6 +3,9 @@ import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { FileText, Github, Linkedin, Mail } from 'lucide-react';
 
+// Profile image can be easily replaced by changing this URL
+const PROFILE_IMAGE = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&h=800";
+
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
   
@@ -68,7 +71,7 @@ const Hero = () => {
               <div className="aspect-square max-w-md mx-auto overflow-hidden rounded-xl bg-secondary border border-border/30 shadow-xl">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-60"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&h=800" 
+                  src={PROFILE_IMAGE} 
                   alt="Professional portrait" 
                   className="w-full h-full object-cover"
                 />
