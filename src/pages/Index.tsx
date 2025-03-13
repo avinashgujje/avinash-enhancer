@@ -39,7 +39,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen grain">
+    <div className="min-h-screen grain bg-background">
       <Header />
       <main>
         <Hero />
