@@ -62,7 +62,7 @@ const Hero = () => {
             </div>
             
             <div className="section-fade-in flex gap-4 pt-4">
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors" aria-label="GitHub">
+              <a href="https://github.com/avinashgujje" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors" aria-label="GitHub">
                 <Github className="h-6 w-6" />
               </a>
               <a href="https://linkedin.com/in/avinashgujje" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
