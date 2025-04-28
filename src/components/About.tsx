@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Code, Database, Globe, Server } from 'lucide-react';
+import { Code, Database, Globe, Server, Shield, Network, Cloud, Lock } from 'lucide-react';
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -34,7 +34,7 @@ const About = () => {
           <h2 className="section-fade-in text-3xl font-bold mb-4">About Me</h2>
           <div className="section-fade-in h-1 w-20 bg-primary mx-auto mb-6"></div>
           <p className="section-fade-in text-muted-foreground">
-            I'm a detail-oriented Full Stack Developer with expertise in creating scalable, efficient, and user-centric applications
+            Accomplished Senior Security Architect with over 15 years of expertise in the Telecom and IT industry
           </p>
         </div>
         
@@ -42,14 +42,14 @@ const About = () => {
           <div className="section-fade-in space-y-6">
             <h3 className="text-xl font-semibold">Professional Profile</h3>
             <p className="text-muted-foreground">
-              With over 5 years of experience in software development, I've worked on diverse projects ranging from enterprise applications to customer-facing products. My approach combines technical expertise with a strong focus on delivering exceptional user experiences.
+              Specializing in the strategic planning and designing of network and security architecture for data centers and enterprise infrastructures. Demonstrated success in planning network and security solutions for the UK Government and leading service providers, including Vodafone, Ericsson, Microsoft, and Jio across EMEA, APAC, and US.
             </p>
             <p className="text-muted-foreground">
-              I thrive in collaborative environments, bringing both technical skills and effective communication to every project. My goal is to create solutions that are not only technically sound but also aligned with business objectives and user needs.
+              Adept at collaborative strategic planning and decision-making, with a focus on delivering cost-effective architecture solutions that maximize ROI. Holds an MS in Cybersecurity and Forensics, BEng in Information Technology and certifications from Cisco, Palo Alto, Fortinet and Meraki.
             </p>
             <div className="pt-4">
-              <Button variant="outline" className="rounded-md">
-                Learn More
+              <Button variant="outline" className="rounded-md" asChild>
+                <a href="#experience">View Experience</a>
               </Button>
             </div>
           </div>
@@ -57,24 +57,24 @@ const About = () => {
           <div className="grid grid-cols-2 gap-4">
             {[
               {
-                icon: <Globe className="h-6 w-6 text-primary" />,
-                title: "Frontend",
-                desc: "Building responsive web applications with React, TypeScript, and modern CSS frameworks"
+                icon: <Shield className="h-6 w-6 text-primary" />,
+                title: "Security Architecture",
+                desc: "Designing comprehensive security solutions for enterprise and data center infrastructures"
               },
               {
-                icon: <Server className="h-6 w-6 text-primary" />,
-                title: "Backend",
-                desc: "Developing robust server-side applications with Node.js, Express, and Java"
+                icon: <Network className="h-6 w-6 text-primary" />,
+                title: "Network Architecture",
+                desc: "Planning and implementing scalable network solutions for large organizations"
               },
               {
-                icon: <Database className="h-6 w-6 text-primary" />,
-                title: "Database",
-                desc: "Designing and optimizing SQL and NoSQL database systems"
+                icon: <Cloud className="h-6 w-6 text-primary" />,
+                title: "Cloud Security",
+                desc: "Securing Azure, AWS environments and implementing cloud-first strategies"
               },
               {
-                icon: <Code className="h-6 w-6 text-primary" />,
-                title: "DevOps",
-                desc: "Implementing CI/CD pipelines, containerization, and cloud infrastructure"
+                icon: <Lock className="h-6 w-6 text-primary" />,
+                title: "Compliance",
+                desc: "Ensuring adherence to ISO 27001, NIST, CIS, TOGAF, CISSP frameworks"
               }
             ].map((item, index) => (
               <Card key={index} className="section-fade-in bg-card border-border/50">

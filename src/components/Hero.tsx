@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { FileText, Github, Linkedin, Mail } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 // Profile image can be easily replaced by changing this URL
 const PROFILE_IMAGE = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&h=800";
@@ -39,29 +40,36 @@ const Hero = () => {
               Avinash Gujje
             </h1>
             <h2 className="section-fade-in text-2xl md:text-3xl text-muted-foreground">
-              Full Stack Developer
+              Senior Security Architect
             </h2>
             <p className="section-fade-in text-lg text-muted-foreground max-w-xl">
-              I specialize in building exceptional digital experiences, creating robust and scalable applications with modern technologies.
+              Accomplished Senior Security Architect with over 15 years of expertise in Telecom and IT industry, specializing in strategic planning and designing of network and security architecture.
             </p>
             
             <div className="section-fade-in flex flex-wrap gap-4 pt-2">
-              <Button size="lg" className="rounded-md">
-                <Mail className="mr-2 h-4 w-4" />
-                Contact Me
+              <Button size="lg" className="rounded-md" asChild>
+                <a href="mailto:avinashgujje07@gmail.com">
+                  <Mail className="mr-2 h-4 w-4" />
+                  Contact Me
+                </a>
               </Button>
-              <Button variant="outline" size="lg" className="rounded-md">
-                <FileText className="mr-2 h-4 w-4" />
-                Download Resume
+              <Button variant="outline" size="lg" className="rounded-md" asChild>
+                <a href="#" download>
+                  <FileText className="mr-2 h-4 w-4" />
+                  Download Resume
+                </a>
               </Button>
             </div>
             
             <div className="section-fade-in flex gap-4 pt-4">
-              <a href="#" className="text-foreground hover:text-primary transition-colors" aria-label="GitHub">
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors" aria-label="GitHub">
                 <Github className="h-6 w-6" />
               </a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
+              <a href="https://linkedin.com/in/avinashgujje" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
                 <Linkedin className="h-6 w-6" />
+              </a>
+              <a href="https://www.avinashgujje.com" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors" aria-label="Personal Website">
+                <ExternalLink className="h-6 w-6" />
               </a>
             </div>
           </div>
@@ -77,8 +85,8 @@ const Hero = () => {
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 p-4 bg-card rounded-lg border border-border shadow-lg">
-                <p className="text-sm font-medium text-primary">5+ Years Experience</p>
-                <p className="text-xs text-muted-foreground">Full Stack Development</p>
+                <p className="text-sm font-medium text-primary">15+ Years Experience</p>
+                <p className="text-xs text-muted-foreground">IT Security Architecture</p>
               </div>
             </div>
           </div>

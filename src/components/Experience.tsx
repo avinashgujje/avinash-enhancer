@@ -5,46 +5,65 @@ import { Separator } from '@/components/ui/separator';
 
 const experiences = [
   {
-    position: "Senior Software Engineer",
-    company: "TechInnovate Solutions",
-    duration: "2021 - Present",
-    location: "San Francisco, CA",
-    description: "Lead developer for cloud-based enterprise applications, managing a team of 5 engineers. Implemented microservices architecture reducing system latency by 40% and improving scalability.",
+    position: "IT Security Architect",
+    company: "Warwickshire County Council",
+    duration: "Nov 2023 - Present",
+    location: "London",
+    description: "Spearheading the Security Architecture for the Warwickshire Government Council comprising of HQ Data Centers, NHS and other corporate offices.",
     responsibilities: [
-      "Architected and developed scalable backend services using Node.js and TypeScript",
-      "Optimized database performance and implemented efficient data retrieval patterns",
-      "Mentored junior developers and conducted code reviews to maintain high quality standards",
-      "Collaborated with product managers to define technical requirements and timelines"
+      "Designed resilient data center security architecture, perimeter security",
+      "Planning Zero Trust Security Models, SASE, ZTNA, Micro-segmentation, MFA and EDR",
+      "Leading a cloud-first approach design and developed future state architecture strategy",
+      "Led risk assessment to ensure ISO 27001, NIST, and CIS compliance",
+      "Architected security policies for Public Cloud, BYOD, Wireless, Wired, IoT Networks"
     ],
-    technologies: ["React", "Node.js", "TypeScript", "AWS", "MongoDB", "Docker"]
+    technologies: ["Zero Trust", "SASE", "ZTNA", "Cloud Security", "ISO 27001", "NIST"]
   },
   {
-    position: "Full Stack Developer",
-    company: "Digital Solutions Inc.",
-    duration: "2018 - 2021",
-    location: "Boston, MA",
-    description: "Developed and maintained web applications for financial services clients, focusing on secure and compliant solutions.",
+    position: "Senior Manager – Security Solutions Architect",
+    company: "Vodafone Business",
+    duration: "Mar 2020 - Oct 2021",
+    location: "Ireland",
+    description: "Designed Network and Security Architectures for Data Centers, Enterprise Networks of ISP, Gov, Banking and Educational organizations across EMEA and US.",
     responsibilities: [
-      "Built responsive frontend interfaces with React and modern CSS frameworks",
-      "Implemented RESTful APIs and server-side logic using Python and Django",
-      "Collaborated with UX designers to create intuitive user interfaces",
-      "Participated in agile development cycles, delivering features on time"
+      "Designed IT Security Infra and SOC using NGFW Cisco, Palo Alto, Fortinet, IPS, SIEM",
+      "Maintained in-depth understanding of CISSP, NIST, TOGAF architecture approaches",
+      "Provided Cyber Security, IAM, PAM, IoT and Cloud Security Solutions",
+      "Bid for Tender, prepared HLD, LLD, RFP, RFR and BOM Quotations in Cisco CCW and Iris",
+      "Led Product Manager role for Fortinet Security Fabric, SD-WAN, SASE products",
+      "Redesigned Security Architecture, WAN to SD-WAN, achieved cost cutting by 30%"
     ],
-    technologies: ["React", "Python", "Django", "PostgreSQL", "Redis", "AWS"]
+    technologies: ["NGFW", "SIEM", "SOC", "SD-WAN", "SASE", "Cisco", "Palo Alto", "Fortinet"]
   },
   {
-    position: "Frontend Developer",
-    company: "WebCraft Technologies",
-    duration: "2016 - 2018",
-    location: "Austin, TX",
-    description: "Created engaging user interfaces for various client projects, focusing on performance and responsive design.",
+    position: "Solutions Architect",
+    company: "Ericsson Global Services Ltd",
+    duration: "Aug 2018 - Mar 2020",
+    location: "US and India",
+    description: "Built DC Security Architecture for Ericsson and MediaKind OTT MediaFirst Product.",
     responsibilities: [
-      "Developed interactive web applications using JavaScript and Vue.js",
-      "Implemented responsive designs and ensured cross-browser compatibility",
-      "Optimized frontend performance through code splitting and lazy loading",
-      "Worked directly with clients to gather requirements and implement feedback"
+      "Designed security solution for LAN, WAN, and WLAN Architectures across 2 HQ and 9+ branch in US, EMEA and APAC regions",
+      "Revamped the existing security architecture, resulting in an 80% reduction in security incidents",
+      "Upgraded existing WAN to SD-WAN, reduced cost by 30% by cutting back MPLS, Dedicated DWDM and DIA Lines",
+      "Built network solution for OTT traffic with MediaFirst developers, and fixed real-time multicast performance issues",
+      "Conceptualized Multi-Vendor Secure VPN connectivity for multi-vendor traffic flow"
     ],
-    technologies: ["JavaScript", "Vue.js", "HTML5", "CSS3", "Sass", "Webpack"]
+    technologies: ["SD-WAN", "DC Security", "WAN Architecture", "VPN", "Network Solutions"]
+  },
+  {
+    position: "Manager – Network Planning and Engineering",
+    company: "Reliance Jio Infocomm Limited",
+    duration: "Aug 2015 - Aug 2018",
+    location: "India",
+    description: "Built Network Security Infrastructure for four Reliance Jio Greenfield Internet and Colo Data Centers.",
+    responsibilities: [
+      "Planning and Engineering of 3 Internet Data Centers with capacity of 20,000 compute nodes",
+      "Spearheaded major network security projects for OSS & BSS, Payment Bank, Cloud",
+      "Designed L3, L2 Spine-Leaf fabric using Cisco Nexus and Perimeter Security",
+      "Built Network Architecture for Storage Network SAN and NAS",
+      "Implemented TOGAF, NIST, ISO compliance for Data Center infrastructure"
+    ],
+    technologies: ["Data Center", "Spine-Leaf", "Cisco Nexus", "Load Balancing", "ISO 27001", "TIA-942"]
   }
 ];
 

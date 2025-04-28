@@ -4,15 +4,15 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ExternalLink, FileText, Github } from 'lucide-react';
+import { Award, ExternalLink, FileText, Github, GraduationCap } from 'lucide-react';
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured online store with product management, cart functionality, and secure checkout process.",
-    image: "https://images.unsplash.com/photo-1661956602944-249bcd04b63f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
-    category: "fullstack",
+    title: "Zero Trust Security Architecture",
+    description: "Designed and implemented a comprehensive Zero Trust security framework for government data centers.",
+    image: "https://images.unsplash.com/photo-1562408590-e32931084e23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    tags: ["Zero Trust", "SASE", "ZTNA", "Micro-segmentation", "MFA"],
+    category: "security",
     links: {
       demo: "#",
       github: "#",
@@ -20,11 +20,11 @@ const projects = [
     }
   },
   {
-    title: "Task Management App",
-    description: "A collaborative project management tool with real-time updates and team assignment features.",
-    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    tags: ["React", "Firebase", "Material UI", "Redux"],
-    category: "frontend",
+    title: "Hyperscale Data Center Architecture",
+    description: "Built network security infrastructure for four Greenfield Internet and Colocation Data Centers.",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    tags: ["Data Center", "Spine-Leaf", "Security", "20,000 Compute Nodes"],
+    category: "network",
     links: {
       demo: "#",
       github: "#",
@@ -32,11 +32,11 @@ const projects = [
     }
   },
   {
-    title: "Financial Dashboard",
-    description: "Data visualization dashboard for financial analytics with interactive charts and reports.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    tags: ["React", "D3.js", "Node.js", "Express"],
-    category: "fullstack",
+    title: "SD-WAN Migration Strategy",
+    description: "Redesigned enterprise WAN to SD-WAN architecture, achieving 30% cost reduction while improving security.",
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    tags: ["SD-WAN", "Security", "Cost Optimization", "Migration"],
+    category: "network",
     links: {
       demo: "#",
       github: "#",
@@ -44,11 +44,11 @@ const projects = [
     }
   },
   {
-    title: "Healthcare API",
-    description: "RESTful API for healthcare data management with advanced security and compliance features.",
-    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80",
-    tags: ["Node.js", "Express", "MongoDB", "JWT"],
-    category: "backend",
+    title: "Enterprise SOC Implementation",
+    description: "Designed Security Operations Center infrastructure using Next-Gen Firewalls and SIEM solutions.",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    tags: ["SOC", "NGFW", "SIEM", "Security Monitoring"],
+    category: "security",
     links: {
       demo: "#",
       github: "#",
@@ -56,11 +56,11 @@ const projects = [
     }
   },
   {
-    title: "Real Estate Mobile App",
-    description: "Cross-platform mobile application for real estate listings with map integration.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80",
-    tags: ["React Native", "Firebase", "Google Maps API"],
-    category: "frontend",
+    title: "Cloud Security Framework",
+    description: "Developed cloud-first security strategy for public cloud adoption ensuring compliance with industry standards.",
+    image: "https://images.unsplash.com/photo-1603899122634-f086ca5f5ddd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    tags: ["Cloud Security", "Azure", "AWS", "Compliance"],
+    category: "security",
     links: {
       demo: "#",
       github: "#",
@@ -68,11 +68,11 @@ const projects = [
     }
   },
   {
-    title: "Content Management System",
-    description: "Custom CMS built for a media company with advanced content scheduling features.",
-    image: "https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    tags: ["Python", "Django", "PostgreSQL", "Redis"],
-    category: "backend",
+    title: "Cisco Meraki Wireless Training",
+    description: "Published comprehensive training course on Udemy, trained over 250 IT professionals on wireless networking.",
+    image: "https://images.unsplash.com/photo-1603398938378-e54eab446dde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    tags: ["Training", "Cisco Meraki", "Wireless", "Certification"],
+    category: "education",
     links: {
       demo: "#",
       github: "#",
@@ -81,29 +81,33 @@ const projects = [
   }
 ];
 
-const additionalResources = [
+const achievements = [
   {
-    title: "UX Design Portfolio",
-    type: "PDF",
-    icon: "🎨",
+    title: "Rising Star Award Big Idea 2024",
+    type: "Award",
+    icon: "🏆",
+    organization: "University of Westminster, London",
     link: "#"
   },
   {
-    title: "Case Studies",
-    type: "PDF",
-    icon: "📊",
+    title: "Employee of the Year 2021",
+    type: "Award",
+    icon: "🥇",
+    organization: "Vodafone, Ireland",
     link: "#"
   },
   {
-    title: "Technical Articles",
-    type: "Blog",
-    icon: "📝",
+    title: "MS Cybersecurity & Forensics",
+    type: "Education",
+    icon: "🎓",
+    organization: "University of Westminster, UK",
     link: "#"
   },
   {
-    title: "Conference Talks",
-    type: "Video",
-    icon: "🎬",
+    title: "Published Cisco Meraki Training",
+    type: "Publication",
+    icon: "📚",
+    organization: "Udemy (250+ Trained Professionals)",
     link: "#"
   }
 ];
@@ -140,10 +144,10 @@ const Projects = () => {
     <section id="projects" ref={sectionRef} className="py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto mb-12 text-center">
-          <h2 className="section-fade-in text-3xl font-bold mb-4">Featured Projects</h2>
+          <h2 className="section-fade-in text-3xl font-bold mb-4">Projects & Achievements</h2>
           <div className="section-fade-in h-1 w-20 bg-primary mx-auto mb-6"></div>
           <p className="section-fade-in text-muted-foreground">
-            A selection of my recent work and professional projects
+            Highlighted projects and notable professional achievements
           </p>
         </div>
         
@@ -151,9 +155,9 @@ const Projects = () => {
           <Tabs defaultValue="all" value={category} onValueChange={setCategory}>
             <TabsList>
               <TabsTrigger value="all">All Projects</TabsTrigger>
-              <TabsTrigger value="frontend">Frontend</TabsTrigger>
-              <TabsTrigger value="backend">Backend</TabsTrigger>
-              <TabsTrigger value="fullstack">Full Stack</TabsTrigger>
+              <TabsTrigger value="security">Security</TabsTrigger>
+              <TabsTrigger value="network">Network</TabsTrigger>
+              <TabsTrigger value="education">Education</TabsTrigger>
             </TabsList>
           </Tabs>
         </div>
@@ -208,22 +212,22 @@ const Projects = () => {
         <div className="section-fade-in mt-16 max-w-3xl mx-auto">
           <Card className="bg-card border-border/50">
             <CardHeader>
-              <CardTitle className="text-center">Additional Resources</CardTitle>
+              <CardTitle className="text-center">Notable Achievements</CardTitle>
               <CardDescription className="text-center">
-                Portfolio documents, case studies and design samples
+                Awards, education, and professional accomplishments
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                {additionalResources.map((resource, index) => (
+                {achievements.map((achievement, index) => (
                   <a 
                     key={index} 
-                    href={resource.link}
+                    href={achievement.link}
                     className="flex flex-col items-center p-4 rounded-lg bg-secondary hover:bg-secondary/70 transition-colors"
                   >
-                    <span className="text-2xl mb-2">{resource.icon}</span>
-                    <h4 className="text-sm font-medium">{resource.title}</h4>
-                    <span className="text-xs text-muted-foreground">{resource.type}</span>
+                    <span className="text-2xl mb-2">{achievement.icon}</span>
+                    <h4 className="text-sm font-medium text-center">{achievement.title}</h4>
+                    <span className="text-xs text-muted-foreground text-center">{achievement.organization}</span>
                   </a>
                 ))}
               </div>

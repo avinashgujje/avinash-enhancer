@@ -5,39 +5,39 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const skillCategories = [
   {
-    id: "frontend",
-    name: "Frontend",
+    id: "security",
+    name: "Security",
     skills: [
-      { name: "React", level: 90 },
-      { name: "TypeScript", level: 85 },
-      { name: "JavaScript", level: 95 },
-      { name: "HTML/CSS", level: 90 },
-      { name: "Next.js", level: 80 },
-      { name: "Tailwind CSS", level: 85 }
+      { name: "NGFW (Palo Alto, Cisco, Fortinet)", level: 95 },
+      { name: "SASE, SD-WAN Security", level: 90 },
+      { name: "Zero Trust Architecture", level: 85 },
+      { name: "IPS, DDoS, WAF", level: 90 },
+      { name: "SIEM, SOC, NAC", level: 85 },
+      { name: "Cloud Security (Azure, AWS)", level: 80 }
     ]
   },
   {
-    id: "backend",
-    name: "Backend",
+    id: "network",
+    name: "Network",
     skills: [
-      { name: "Node.js", level: 85 },
-      { name: "Express", level: 80 },
-      { name: "Python", level: 75 },
-      { name: "Django", level: 70 },
-      { name: "Java", level: 65 },
-      { name: "SQL", level: 80 }
+      { name: "Data Center Architecture", level: 95 },
+      { name: "SD-WAN, SDN, Cisco ACI", level: 90 },
+      { name: "Enterprise WAN/LAN Design", level: 90 },
+      { name: "Load Balancing (F5, Citrix)", level: 85 },
+      { name: "Network Automation", level: 80 },
+      { name: "Spine-Leaf Fabric", level: 90 }
     ]
   },
   {
-    id: "tools",
-    name: "Tools & Others",
+    id: "frameworks",
+    name: "Frameworks & Certifications",
     skills: [
-      { name: "Git/GitHub", level: 90 },
-      { name: "Docker", level: 75 },
-      { name: "AWS", level: 70 },
-      { name: "CI/CD", level: 80 },
-      { name: "RESTful APIs", level: 85 },
-      { name: "GraphQL", level: 70 }
+      { name: "TOGAF Architecture Framework", level: 90 },
+      { name: "CISSP Security Framework", level: 85 },
+      { name: "NIST Security Framework", level: 90 },
+      { name: "ISO 27001 Compliance", level: 85 },
+      { name: "TIA-942 Rated 3 Standards", level: 80 },
+      { name: "ITIL Service Management", level: 75 }
     ]
   }
 ];
@@ -85,7 +85,7 @@ const Skills = () => {
         </div>
         
         <div className="section-fade-in max-w-4xl mx-auto">
-          <Tabs defaultValue="frontend" className="w-full">
+          <Tabs defaultValue="security" className="w-full">
             <TabsList className="grid grid-cols-3 mb-8">
               {skillCategories.map((category) => (
                 <TabsTrigger key={category.id} value={category.id} className="text-sm">
@@ -118,17 +118,17 @@ const Skills = () => {
         </div>
         
         <div className="section-fade-in mt-16 max-w-4xl mx-auto">
-          <h3 className="text-xl font-semibold mb-6 text-center">Additional Competencies</h3>
+          <h3 className="text-xl font-semibold mb-6 text-center">Professional Competencies</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              "Problem Solving",
-              "Team Leadership",
-              "Agile Methodology",
-              "Project Management",
-              "UI/UX Design",
-              "Technical Writing",
-              "System Architecture",
-              "Performance Optimization"
+              "Network Security Design",
+              "Product Management",
+              "Risk Management",
+              "Pre-Sales Architecture",
+              "IT Strategy",
+              "Solution Design",
+              "Technical Leadership",
+              "Governance & Compliance"
             ].map((skill, index) => (
               <Card key={index} className="bg-card border-border/50">
                 <CardContent className="p-4 text-center">
