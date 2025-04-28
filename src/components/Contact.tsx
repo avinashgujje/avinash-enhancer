@@ -73,10 +73,10 @@ const Contact = () => {
                 <span className="text-sm font-medium text-primary">Contact</span>
               </div>
               <h2 className="animate-on-scroll opacity-0 text-3xl md:text-4xl font-bold tracking-tight mb-6">
-                Let's Work Together
+                For Collaboration
               </h2>
               <p className="animate-on-scroll opacity-0 text-foreground/80 mb-10">
-                I'm currently available for freelance work and full-time opportunities. If you have a project in mind or just want to chat, feel free to reach out.
+                Feel free to reach out for collaboration on impactful ideas and initiatives.
               </p>
               
               <div className="animate-on-scroll opacity-0 space-y-6">
@@ -89,8 +89,8 @@ const Contact = () => {
                       </svg>
                     ), 
                     title: "Email", 
-                    value: "hello@avinash.com", 
-                    link: "mailto:hello@avinash.com" 
+                    value: "avinashgujje07@gmail.com", 
+                    link: "mailto:avinashgujje07@gmail.com" 
                   },
                   { 
                     icon: (
@@ -99,8 +99,8 @@ const Contact = () => {
                       </svg>
                     ), 
                     title: "Phone", 
-                    value: "+1 (123) 456-7890", 
-                    link: "tel:+11234567890" 
+                    value: "07444 284 300", 
+                    link: "tel:+447444284300" 
                   },
                   { 
                     icon: (
@@ -121,8 +121,8 @@ const Contact = () => {
                       </svg>
                     ), 
                     title: "LinkedIn", 
-                    value: "linkedin.com/in/avinash", 
-                    link: "https://linkedin.com/in/avinash" 
+                    value: "linkedin.com/in/avinashgujje", 
+                    link: "https://linkedin.com/in/avinashgujje" 
                   }
                 ].map((item, index) => (
                   <a 

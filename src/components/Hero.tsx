@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button';
 import { FileText, Github, Linkedin, Mail } from 'lucide-react';
 import { ExternalLink } from 'lucide-react';
 
-// Profile image can be easily replaced by changing this URL
-const PROFILE_IMAGE = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=800&h=800";
+// Using the uploaded profile image
+const PROFILE_IMAGE = "/lovable-uploads/7ca394b1-c574-4211-94f8-48844b8fb9e1.png";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -54,7 +54,7 @@ const Hero = () => {
                 </a>
               </Button>
               <Button variant="outline" size="lg" className="rounded-md" asChild>
-                <a href="#" download>
+                <a href="/Avinash_Gujje_Resume.pdf" download>
                   <FileText className="mr-2 h-4 w-4" />
                   Download Resume
                 </a>
@@ -80,7 +80,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-60"></div>
                 <img 
                   src={PROFILE_IMAGE} 
-                  alt="Professional portrait" 
+                  alt="Avinash Gujje" 
                   className="w-full h-full object-cover"
                 />
               </div>
