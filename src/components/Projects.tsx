@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -108,7 +107,7 @@ const achievements = [
     type: "Publication",
     icon: "📚",
     organization: "Udemy (250+ Trained Professionals)",
-    link: "#"
+    link: "https://www.udemy.com/course/cisco-meraki-wireless-all-labs"
   }
 ];
 
