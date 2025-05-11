@@ -109,8 +109,8 @@ const Contact = () => {
                       </svg>
                     ), 
                     title: "GitHub", 
-                    value: "github.com/avinash", 
-                    link: "https://github.com/avinash" 
+                    value: "github.com/avinashgujje", 
+                    link: "https://github.com/avinashgujje" 
                   },
                   { 
                     icon: (
