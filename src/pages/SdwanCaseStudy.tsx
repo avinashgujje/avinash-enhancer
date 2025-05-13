@@ -10,303 +10,291 @@ const SdwanCaseStudy = () => {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-12 max-w-5xl">
         {/* Back Button */}
-        <div className="mb-8">
+        <div className="mb-8 flex justify-between">
           <Button variant="ghost" asChild>
             <Link to="/#projects">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Projects
             </Link>
           </Button>
+          <Button variant="primary" className="bg-blue-500 hover:bg-blue-600" asChild>
+            <Link to="/#projects">
+              Back to Projects
+            </Link>
+          </Button>
         </div>
         
         {/* Header */}
-        <div className="mb-12 border-b pb-8">
+        <div className="mb-8 border-b pb-6">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">High-Level Design: Global SD-WAN Cloud Architecture</h1>
-          <div className="flex items-center text-sm text-muted-foreground">
-            <span className="mr-4">Date: 10/01/2020</span>
-            <span>Author: Avinash Gujje – All Rights Reserved</span>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-muted-foreground">
+            <div className="mb-4 sm:mb-0">
+              <span className="mr-4">Date: 10/01/2020</span>
+              <span>Author: Avinash Gujje – All Rights Reserved</span>
+            </div>
+            <div className="flex space-x-2">
+              <Button variant="outline" size="sm" className="gap-2" asChild>
+                <a href="https://github.com/avinashgujje" target="_blank" rel="noopener noreferrer">
+                  <FileText className="h-4 w-4" />
+                  GitHub
+                </a>
+              </Button>
+              <Button variant="outline" size="sm" className="gap-2" asChild>
+                <a href="https://www.linkedin.com/in/avinashgujje/" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4" />
+                  Contact
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Project Summary - Moved from sidebar to top */}
+        <div className="mb-10 bg-gradient-to-br from-card to-card/50 rounded-lg border border-border/50 p-6 shadow-md">
+          <h2 className="text-2xl font-semibold mb-4 pb-2 border-b border-border/50">Project Summary</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div>
+              <h3 className="text-sm font-medium text-muted-foreground">Project Type</h3>
+              <p className="text-foreground">Network Architecture</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-medium text-muted-foreground">Technology</h3>
+              <p className="text-foreground">SD-WAN, MPLS, VPN</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-medium text-muted-foreground">Scope</h3>
+              <p className="text-foreground">Global Enterprise WAN</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-medium text-muted-foreground">Date</h3>
+              <p className="text-foreground">2020</p>
+            </div>
           </div>
         </div>
         
         {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Content Column */}
-          <div className="lg:col-span-8 space-y-10">
-            <section>
-              <h2 className="text-3xl font-semibold mb-4 flex items-center">
-                <span className="mr-2">📌</span>
-                <span>Overview</span>
-              </h2>
-              <p className="text-foreground/80 text-justify leading-relaxed">
-                This architecture illustrates a Global Software-Defined Wide Area Network (SD-WAN) deployment leveraging a hybrid cloud model. It connects geographically distributed enterprise branches and data centers using a mix of MPLS, VPN over Internet, and SD-WAN tunnels to ensure optimized performance, secure connectivity, and centralized orchestration.
-              </p>
-            </section>
-            
-            {/* Diagram Section - Centered and with hover effect */}
-            <section className="my-12">
-              <div className="group relative">
-                <div className="overflow-hidden rounded-lg border-4 border-primary/20 transition-all duration-300 group-hover:border-primary/50 shadow-lg group-hover:shadow-primary/20">
-                  <AspectRatio ratio={16/9} className="w-full">
-                    <img 
-                      src="/lovable-uploads/859a4a0b-fc8c-459f-8679-0b0e54f5921a.png" 
-                      alt="SD-WAN Architecture Diagram" 
-                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </AspectRatio>
-                </div>
-                <div className="mt-3 text-center font-medium text-muted-foreground">
-                  <p>SD-WAN Architecture Diagram</p>
-                  <p className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">Click to view in full size</p>
-                </div>
-              </div>
-            </section>
-            
-            <section>
-              <h2 className="text-3xl font-semibold mb-4 flex items-center">
-                <span className="mr-2">🎯</span>
-                <span>Business Objectives</span>
-              </h2>
-              <ul className="list-none space-y-3 text-justify">
-                <li className="flex">
-                  <span className="text-primary mr-3">•</span>
-                  <span className="text-foreground/80">Enable secure and resilient global connectivity between data centers, branch offices, and cloud providers.</span>
-                </li>
-                <li className="flex">
-                  <span className="text-primary mr-3">•</span>
-                  <span className="text-foreground/80">Reduce dependency on MPLS while improving performance via traffic steering and SaaS optimization.</span>
-                </li>
-                <li className="flex">
-                  <span className="text-primary mr-3">•</span>
-                  <span className="text-foreground/80">Centrally manage and orchestrate WAN policies using a unified controller.</span>
-                </li>
-              </ul>
-            </section>
-            
-            <section>
-              <h2 className="text-3xl font-semibold mb-4 flex items-center">
-                <span className="mr-2">🧩</span>
-                <span>Key Components</span>
-              </h2>
-              <div className="overflow-x-auto rounded-lg border border-border/50 bg-card/50 shadow-sm">
-                <table className="min-w-full">
-                  <thead>
-                    <tr className="border-b border-border">
-                      <th className="py-4 px-6 text-left font-medium text-foreground">Component</th>
-                      <th className="py-4 px-6 text-left font-medium text-foreground">Description</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-border/50">
-                    <tr className="hover:bg-muted/30 transition-colors">
-                      <td className="py-4 px-6 font-medium">SD-WAN Edges</td>
-                      <td className="py-4 px-6 text-foreground/80 text-justify">Deployed at each branch/DC (e.g., Toronto, San Jose, Paris, Mumbai, etc.). Manages dynamic routing and link failover.</td>
-                    </tr>
-                    <tr className="hover:bg-muted/30 transition-colors">
-                      <td className="py-4 px-6 font-medium">Orchestrator</td>
-                      <td className="py-4 px-6 text-foreground/80 text-justify">Centralized management and policy control engine for SD-WAN configuration.</td>
-                    </tr>
-                    <tr className="hover:bg-muted/30 transition-colors">
-                      <td className="py-4 px-6 font-medium">MPLS Cloud</td>
-                      <td className="py-4 px-6 text-foreground/80 text-justify">Legacy MPLS backbone used for high-priority traffic and inter-DC connectivity.</td>
-                    </tr>
-                    <tr className="hover:bg-muted/30 transition-colors">
-                      <td className="py-4 px-6 font-medium">VPN over Internet</td>
-                      <td className="py-4 px-6 text-foreground/80 text-justify">Backup/secondary path via encrypted internet tunnels to reduce costs and enhance flexibility.</td>
-                    </tr>
-                    <tr className="hover:bg-muted/30 transition-colors">
-                      <td className="py-4 px-6 font-medium">Cloud On-Ramp</td>
-                      <td className="py-4 px-6 text-foreground/80 text-justify">Integrations with major cloud providers like Azure, AWS, and Google Cloud.</td>
-                    </tr>
-                    <tr className="hover:bg-muted/30 transition-colors">
-                      <td className="py-4 px-6 font-medium">SaaS Optimization</td>
-                      <td className="py-4 px-6 text-foreground/80 text-justify">Special handling for services like Office 365, Slack, LinkedIn, etc., using traffic shaping.</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </section>
-            
-            <section>
-              <h2 className="text-3xl font-semibold mb-4 flex items-center">
-                <span className="mr-2">🌍</span>
-                <span>Global Site Distribution</span>
-              </h2>
-              <p className="mb-4 text-foreground/80 text-justify">The architecture includes the following major nodes:</p>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="bg-card/40 rounded-lg p-4 border border-border/50 hover:border-primary/50 transition-colors">
-                  <h3 className="font-semibold mb-2 text-primary">Americas</h3>
-                  <p className="text-foreground/80">Toronto, Frisco-Colo, San Jose</p>
-                </div>
-                <div className="bg-card/40 rounded-lg p-4 border border-border/50 hover:border-primary/50 transition-colors">
-                  <h3 className="font-semibold mb-2 text-primary">EMEA</h3>
-                  <p className="text-foreground/80">Paris, Paris DC, Kfar Saba</p>
-                </div>
-                <div className="bg-card/40 rounded-lg p-4 border border-border/50 hover:border-primary/50 transition-colors">
-                  <h3 className="font-semibold mb-2 text-primary">APAC</h3>
-                  <p className="text-foreground/80">Singapore, Beijing, Mumbai, Bangalore DC</p>
-                </div>
-              </div>
-            </section>
-            
-            <section>
-              <h2 className="text-3xl font-semibold mb-4 flex items-center">
-                <span className="mr-2">🧠</span>
-                <span>Connectivity & Routing Strategy</span>
-              </h2>
-              <div className="space-y-6">
-                <div className="bg-card/30 rounded-lg p-6 border-l-4 border-blue-500 hover:bg-card/50 transition-all">
-                  <h3 className="text-xl font-medium mb-2">Primary Path</h3>
-                  <ul className="list-none space-y-2 text-justify">
-                    <li className="flex">
-                      <span className="text-blue-500 mr-3">•</span>
-                      <span className="text-foreground/80">MPLS is used for mission-critical and latency-sensitive traffic between data centers.</span>
-                    </li>
-                    <li className="flex">
-                      <span className="text-blue-500 mr-3">•</span>
-                      <span className="text-foreground/80">Blue solid lines in the diagram represent MPLS circuits.</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="bg-card/30 rounded-lg p-6 border-l-4 border-red-500 hover:bg-card/50 transition-all">
-                  <h3 className="text-xl font-medium mb-2">Secondary Path</h3>
-                  <ul className="list-none space-y-2 text-justify">
-                    <li className="flex">
-                      <span className="text-red-500 mr-3">•</span>
-                      <span className="text-foreground/80">VPN over the internet is used for non-critical workloads or backup.</span>
-                    </li>
-                    <li className="flex">
-                      <span className="text-red-500 mr-3">•</span>
-                      <span className="text-foreground/80">Represented by red dashed lines in the diagram.</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="bg-card/30 rounded-lg p-6 border-l-4 border-green-500 hover:bg-card/50 transition-all">
-                  <h3 className="text-xl font-medium mb-2">SD-WAN Intelligence</h3>
-                  <ul className="list-none space-y-2 text-justify">
-                    <li className="flex">
-                      <span className="text-green-500 mr-3">•</span>
-                      <span className="text-foreground/80">Traffic dynamically routed based on performance metrics (latency, jitter, packet loss).</span>
-                    </li>
-                    <li className="flex">
-                      <span className="text-green-500 mr-3">•</span>
-                      <span className="text-foreground/80">SD-WAN edges constantly monitor link health to decide optimal path.</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="bg-card/30 rounded-lg p-6 border-l-4 border-yellow-500 hover:bg-card/50 transition-all">
-                  <h3 className="text-xl font-medium mb-2">SaaS Traffic Shaping</h3>
-                  <ul className="list-none space-y-2 text-justify">
-                    <li className="flex">
-                      <span className="text-yellow-500 mr-3">•</span>
-                      <span className="text-foreground/80">SaaS applications like Salesforce, SharePoint, and Zendesk are prioritized through deep packet inspection (DPI) and QoS policies.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-            
-            <section>
-              <h2 className="text-3xl font-semibold mb-4 flex items-center">
-                <span className="mr-2">☁️</span>
-                <span>Cloud Integration</span>
-              </h2>
-              <ul className="list-none space-y-3 text-justify">
-                <li className="flex">
-                  <span className="text-primary mr-3">•</span>
-                  <span className="text-foreground/80">Direct integration with public cloud platforms ensures optimized cloud app performance.</span>
-                </li>
-                <li className="flex">
-                  <span className="text-primary mr-3">•</span>
-                  <span className="text-foreground/80">Multi-cloud support for Azure, AWS, and Google Cloud Platform is enabled through SD-WAN fabric.</span>
-                </li>
-              </ul>
-            </section>
-            
-            <section>
-              <h2 className="text-3xl font-semibold mb-4 flex items-center">
-                <span className="mr-2">🛡️</span>
-                <span>Security Considerations</span>
-              </h2>
-              <ul className="list-none space-y-3 text-justify">
-                <li className="flex">
-                  <span className="text-primary mr-3">•</span>
-                  <span className="text-foreground/80">All SD-WAN tunnels are encrypted using IPsec.</span>
-                </li>
-                <li className="flex">
-                  <span className="text-primary mr-3">•</span>
-                  <span className="text-foreground/80">Central policy enforcement ensures consistent firewall and access rules.</span>
-                </li>
-                <li className="flex">
-                  <span className="text-primary mr-3">•</span>
-                  <span className="text-foreground/80">Zero Trust principles enforced between regions.</span>
-                </li>
-              </ul>
-            </section>
-            
-            <section>
-              <h2 className="text-3xl font-semibold mb-4 flex items-center">
-                <span className="mr-2">📈</span>
-                <span>Scalability and Resilience</span>
-              </h2>
-              <ul className="list-none space-y-3 text-justify">
-                <li className="flex">
-                  <span className="text-primary mr-3">•</span>
-                  <span className="text-foreground/80">Easily extendable to add new locations or cloud zones.</span>
-                </li>
-                <li className="flex">
-                  <span className="text-primary mr-3">•</span>
-                  <span className="text-foreground/80">High Availability (HA) configuration possible for orchestrator and edge devices.</span>
-                </li>
-                <li className="flex">
-                  <span className="text-primary mr-3">•</span>
-                  <span className="text-foreground/80">Supports centralized logging and monitoring.</span>
-                </li>
-              </ul>
-            </section>
-          </div>
+        <div className="space-y-10">
+          <section>
+            <h2 className="text-3xl font-semibold mb-4 flex items-center">
+              <span className="mr-2">📌</span>
+              <span>Overview</span>
+            </h2>
+            <p className="text-foreground/80 text-justify leading-relaxed">
+              This architecture illustrates a Global Software-Defined Wide Area Network (SD-WAN) deployment leveraging a hybrid cloud model. It connects geographically distributed enterprise branches and data centers using a mix of MPLS, VPN over Internet, and SD-WAN tunnels to ensure optimized performance, secure connectivity, and centralized orchestration.
+            </p>
+          </section>
           
-          {/* Sidebar */}
-          <div className="lg:col-span-4">
-            <div className="sticky top-24 space-y-8">
-              <div className="bg-gradient-to-br from-card to-card/50 rounded-lg border border-border/50 shadow-lg overflow-hidden">
-                <div className="p-6">
-                  <h3 className="font-semibold text-xl mb-6 pb-4 border-b border-border/50">Project Summary</h3>
-                  <div className="space-y-4 text-sm">
-                    <div className="flex justify-between">
-                      <span className="font-medium text-muted-foreground">Project Type:</span>
-                      <span className="text-foreground">Network Architecture</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-medium text-muted-foreground">Technology:</span>
-                      <span className="text-foreground">SD-WAN, MPLS, VPN</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-medium text-muted-foreground">Scope:</span>
-                      <span className="text-foreground">Global Enterprise WAN</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-medium text-muted-foreground">Date:</span>
-                      <span className="text-foreground">2020</span>
-                    </div>
-                  </div>
-                
-                  <div className="mt-8 space-y-4">
-                    <Button className="w-full gap-2" asChild>
-                      <a href="https://github.com/avinashgujje" target="_blank" rel="noopener noreferrer">
-                        <FileText className="h-4 w-4" />
-                        View on GitHub
-                      </a>
-                    </Button>
-                    <Button variant="outline" className="w-full gap-2" asChild>
-                      <a href="https://www.linkedin.com/in/avinashgujje/" target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4" />
-                        Contact Author
-                      </a>
-                    </Button>
-                  </div>
-                </div>
+          {/* Diagram Section - Centered and with hover effect */}
+          <section className="my-12">
+            <div className="group relative">
+              <div className="overflow-hidden rounded-lg border-4 border-primary/20 transition-all duration-300 group-hover:border-primary/50 shadow-lg group-hover:shadow-primary/20">
+                <AspectRatio ratio={16/9} className="w-full">
+                  <img 
+                    src="/lovable-uploads/859a4a0b-fc8c-459f-8679-0b0e54f5921a.png" 
+                    alt="SD-WAN Architecture Diagram" 
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                  />
+                </AspectRatio>
+              </div>
+              <div className="mt-3 text-center font-medium text-muted-foreground">
+                <p>SD-WAN Architecture Diagram</p>
+                <p className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">Click to view in full size</p>
               </div>
             </div>
-          </div>
+          </section>
+          
+          <section>
+            <h2 className="text-3xl font-semibold mb-4 flex items-center">
+              <span className="mr-2">🎯</span>
+              <span>Business Objectives</span>
+            </h2>
+            <ul className="list-none space-y-3 text-justify">
+              <li className="flex">
+                <span className="text-primary mr-3">•</span>
+                <span className="text-foreground/80">Enable secure and resilient global connectivity between data centers, branch offices, and cloud providers.</span>
+              </li>
+              <li className="flex">
+                <span className="text-primary mr-3">•</span>
+                <span className="text-foreground/80">Reduce dependency on MPLS while improving performance via traffic steering and SaaS optimization.</span>
+              </li>
+              <li className="flex">
+                <span className="text-primary mr-3">•</span>
+                <span className="text-foreground/80">Centrally manage and orchestrate WAN policies using a unified controller.</span>
+              </li>
+            </ul>
+          </section>
+          
+          <section>
+            <h2 className="text-3xl font-semibold mb-4 flex items-center">
+              <span className="mr-2">🧩</span>
+              <span>Key Components</span>
+            </h2>
+            <div className="overflow-x-auto rounded-lg border border-border/50 bg-card/50 shadow-sm">
+              <table className="min-w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="py-4 px-6 text-left font-medium text-foreground">Component</th>
+                    <th className="py-4 px-6 text-left font-medium text-foreground">Description</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border/50">
+                  <tr className="hover:bg-muted/30 transition-colors">
+                    <td className="py-4 px-6 font-medium">SD-WAN Edges</td>
+                    <td className="py-4 px-6 text-foreground/80 text-justify">Deployed at each branch/DC (e.g., Toronto, San Jose, Paris, Mumbai, etc.). Manages dynamic routing and link failover.</td>
+                  </tr>
+                  <tr className="hover:bg-muted/30 transition-colors">
+                    <td className="py-4 px-6 font-medium">Orchestrator</td>
+                    <td className="py-4 px-6 text-foreground/80 text-justify">Centralized management and policy control engine for SD-WAN configuration.</td>
+                  </tr>
+                  <tr className="hover:bg-muted/30 transition-colors">
+                    <td className="py-4 px-6 font-medium">MPLS Cloud</td>
+                    <td className="py-4 px-6 text-foreground/80 text-justify">Legacy MPLS backbone used for high-priority traffic and inter-DC connectivity.</td>
+                  </tr>
+                  <tr className="hover:bg-muted/30 transition-colors">
+                    <td className="py-4 px-6 font-medium">VPN over Internet</td>
+                    <td className="py-4 px-6 text-foreground/80 text-justify">Backup/secondary path via encrypted internet tunnels to reduce costs and enhance flexibility.</td>
+                  </tr>
+                  <tr className="hover:bg-muted/30 transition-colors">
+                    <td className="py-4 px-6 font-medium">Cloud On-Ramp</td>
+                    <td className="py-4 px-6 text-foreground/80 text-justify">Integrations with major cloud providers like Azure, AWS, and Google Cloud.</td>
+                  </tr>
+                  <tr className="hover:bg-muted/30 transition-colors">
+                    <td className="py-4 px-6 font-medium">SaaS Optimization</td>
+                    <td className="py-4 px-6 text-foreground/80 text-justify">Special handling for services like Office 365, Slack, LinkedIn, etc., using traffic shaping.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          
+          <section>
+            <h2 className="text-3xl font-semibold mb-4 flex items-center">
+              <span className="mr-2">🌍</span>
+              <span>Global Site Distribution</span>
+            </h2>
+            <p className="mb-4 text-foreground/80 text-justify">The architecture includes the following major nodes:</p>
+            <div className="space-y-3 text-justify">
+              <p><span className="font-semibold text-primary">Americas:</span> Toronto, Frisco-Colo, San Jose</p>
+              <p><span className="font-semibold text-primary">EMEA:</span> Paris, Paris DC, Kfar Saba</p>
+              <p><span className="font-semibold text-primary">APAC:</span> Singapore, Beijing, Mumbai, Bangalore DC</p>
+            </div>
+          </section>
+          
+          <section>
+            <h2 className="text-3xl font-semibold mb-4 flex items-center">
+              <span className="mr-2">🧠</span>
+              <span>Connectivity & Routing Strategy</span>
+            </h2>
+            <div className="space-y-6">
+              <div className="bg-card/30 rounded-lg p-6 border-l-4 border-blue-500 hover:bg-card/50 transition-all">
+                <h3 className="text-xl font-medium mb-2">Primary Path</h3>
+                <ul className="list-none space-y-2 text-justify">
+                  <li className="flex">
+                    <span className="text-blue-500 mr-3">•</span>
+                    <span className="text-foreground/80">MPLS is used for mission-critical and latency-sensitive traffic between data centers.</span>
+                  </li>
+                  <li className="flex">
+                    <span className="text-blue-500 mr-3">•</span>
+                    <span className="text-foreground/80">Blue solid lines in the diagram represent MPLS circuits.</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-card/30 rounded-lg p-6 border-l-4 border-red-500 hover:bg-card/50 transition-all">
+                <h3 className="text-xl font-medium mb-2">Secondary Path</h3>
+                <ul className="list-none space-y-2 text-justify">
+                  <li className="flex">
+                    <span className="text-red-500 mr-3">•</span>
+                    <span className="text-foreground/80">VPN over the internet is used for non-critical workloads or backup.</span>
+                  </li>
+                  <li className="flex">
+                    <span className="text-red-500 mr-3">•</span>
+                    <span className="text-foreground/80">Represented by red dashed lines in the diagram.</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-card/30 rounded-lg p-6 border-l-4 border-green-500 hover:bg-card/50 transition-all">
+                <h3 className="text-xl font-medium mb-2">SD-WAN Intelligence</h3>
+                <ul className="list-none space-y-2 text-justify">
+                  <li className="flex">
+                    <span className="text-green-500 mr-3">•</span>
+                    <span className="text-foreground/80">Traffic dynamically routed based on performance metrics (latency, jitter, packet loss).</span>
+                  </li>
+                  <li className="flex">
+                    <span className="text-green-500 mr-3">•</span>
+                    <span className="text-foreground/80">SD-WAN edges constantly monitor link health to decide optimal path.</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-card/30 rounded-lg p-6 border-l-4 border-yellow-500 hover:bg-card/50 transition-all">
+                <h3 className="text-xl font-medium mb-2">SaaS Traffic Shaping</h3>
+                <ul className="list-none space-y-2 text-justify">
+                  <li className="flex">
+                    <span className="text-yellow-500 mr-3">•</span>
+                    <span className="text-foreground/80">SaaS applications like Salesforce, SharePoint, and Zendesk are prioritized through deep packet inspection (DPI) and QoS policies.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          
+          <section>
+            <h2 className="text-3xl font-semibold mb-4 flex items-center">
+              <span className="mr-2">☁️</span>
+              <span>Cloud Integration</span>
+            </h2>
+            <ul className="list-none space-y-3 text-justify">
+              <li className="flex">
+                <span className="text-primary mr-3">•</span>
+                <span className="text-foreground/80">Direct integration with public cloud platforms ensures optimized cloud app performance.</span>
+              </li>
+              <li className="flex">
+                <span className="text-primary mr-3">•</span>
+                <span className="text-foreground/80">Multi-cloud support for Azure, AWS, and Google Cloud Platform is enabled through SD-WAN fabric.</span>
+              </li>
+            </ul>
+          </section>
+          
+          <section>
+            <h2 className="text-3xl font-semibold mb-4 flex items-center">
+              <span className="mr-2">🛡️</span>
+              <span>Security Considerations</span>
+            </h2>
+            <ul className="list-none space-y-3 text-justify">
+              <li className="flex">
+                <span className="text-primary mr-3">•</span>
+                <span className="text-foreground/80">All SD-WAN tunnels are encrypted using IPsec.</span>
+              </li>
+              <li className="flex">
+                <span className="text-primary mr-3">•</span>
+                <span className="text-foreground/80">Central policy enforcement ensures consistent firewall and access rules.</span>
+              </li>
+              <li className="flex">
+                <span className="text-primary mr-3">•</span>
+                <span className="text-foreground/80">Zero Trust principles enforced between regions.</span>
+              </li>
+            </ul>
+          </section>
+          
+          <section>
+            <h2 className="text-3xl font-semibold mb-4 flex items-center">
+              <span className="mr-2">📈</span>
+              <span>Scalability and Resilience</span>
+            </h2>
+            <ul className="list-none space-y-3 text-justify">
+              <li className="flex">
+                <span className="text-primary mr-3">•</span>
+                <span className="text-foreground/80">Easily extendable to add new locations or cloud zones.</span>
+              </li>
+              <li className="flex">
+                <span className="text-primary mr-3">•</span>
+                <span className="text-foreground/80">High Availability (HA) configuration possible for orchestrator and edge devices.</span>
+              </li>
+              <li className="flex">
+                <span className="text-primary mr-3">•</span>
+                <span className="text-foreground/80">Supports centralized logging and monitoring.</span>
+              </li>
+            </ul>
+          </section>
         </div>
       </div>
     </div>
