@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -16,6 +17,18 @@ const projects = [
       demo: "#",
       github: "#",
       case: "#"
+    }
+  },
+  {
+    title: "Global SD-WAN Cloud Architecture",
+    description: "Designed a Global SD-WAN deployment leveraging hybrid cloud model connecting distributed enterprise locations.",
+    image: "/lovable-uploads/859a4a0b-fc8c-459f-8679-0b0e54f5921a.png",
+    tags: ["SD-WAN", "Cloud", "MPLS", "VPN", "Hybrid Network"],
+    category: "network",
+    links: {
+      demo: "#",
+      github: "https://github.com/avinashgujje",
+      case: "/sdwan-case-study"
     }
   },
   {
