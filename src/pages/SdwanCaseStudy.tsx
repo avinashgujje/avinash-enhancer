@@ -17,7 +17,7 @@ const SdwanCaseStudy = () => {
               Back to Projects
             </Link>
           </Button>
-          <Button variant="primary" className="bg-blue-500 hover:bg-blue-600" asChild>
+          <Button variant="default" className="bg-blue-500 hover:bg-blue-600" asChild>
             <Link to="/#projects">
               Back to Projects
             </Link>
@@ -28,29 +28,29 @@ const SdwanCaseStudy = () => {
         <div className="mb-8 border-b pb-6">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">High-Level Design: Global SD-WAN Cloud Architecture</h1>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-muted-foreground">
-            <div className="mb-4 sm:mb-0">
+            <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-0">
               <span className="mr-4">Date: 10/01/2020</span>
-              <span>Author: Avinash Gujje – All Rights Reserved</span>
-            </div>
-            <div className="flex space-x-2">
-              <Button variant="outline" size="sm" className="gap-2" asChild>
-                <a href="https://github.com/avinashgujje" target="_blank" rel="noopener noreferrer">
-                  <FileText className="h-4 w-4" />
-                  GitHub
-                </a>
-              </Button>
-              <Button variant="outline" size="sm" className="gap-2" asChild>
-                <a href="https://www.linkedin.com/in/avinashgujje/" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4" />
-                  Contact
-                </a>
-              </Button>
+              <span className="mr-4">Author: Avinash Gujje – All Rights Reserved</span>
+              <div className="flex space-x-2 mt-2 sm:mt-0">
+                <Button variant="outline" size="sm" className="gap-2" asChild>
+                  <a href="https://github.com/avinashgujje" target="_blank" rel="noopener noreferrer">
+                    <FileText className="h-4 w-4" />
+                    GitHub
+                  </a>
+                </Button>
+                <Button variant="outline" size="sm" className="gap-2" asChild>
+                  <a href="https://www.linkedin.com/in/avinashgujje/" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="h-4 w-4" />
+                    Contact
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Project Summary - Moved from sidebar to top */}
-        <div className="mb-10 bg-gradient-to-br from-card to-card/50 rounded-lg border border-border/50 p-6 shadow-md">
+        {/* Project Summary - Now above Overview */}
+        <section className="mb-10 bg-gradient-to-br from-card to-card/50 rounded-lg border border-border/50 p-6 shadow-md">
           <h2 className="text-2xl font-semibold mb-4 pb-2 border-b border-border/50">Project Summary</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div>
@@ -70,7 +70,7 @@ const SdwanCaseStudy = () => {
               <p className="text-foreground">2020</p>
             </div>
           </div>
-        </div>
+        </section>
         
         {/* Main Content */}
         <div className="space-y-10">

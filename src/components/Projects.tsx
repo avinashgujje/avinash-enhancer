@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Award, ExternalLink, FileText, Github, GraduationCap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const projects = [
   {
@@ -176,47 +177,53 @@ const Projects = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
-            <Card key={index} className="section-fade-in overflow-hidden bg-card border-border/50 h-full flex flex-col">
-              <div className="aspect-video w-full overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="secondary" className="font-normal">
-                      {tag}
-                    </Badge>
-                  ))}
+            <Card key={index} className="section-fade-in overflow-hidden bg-card border-border/50 h-full flex flex-col hover:shadow-lg transition-shadow duration-300">
+              <Link 
+                to={project.links.case} 
+                className="flex flex-col h-full cursor-pointer" 
+                aria-label={`View ${project.title} case study`}
+              >
+                <div className="aspect-video w-full overflow-hidden cursor-pointer">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
                 </div>
-              </CardContent>
-              <CardFooter className="flex justify-between">
-                <Button variant="outline" size="sm" asChild>
-                  <a href={project.links.case}>
-                    <FileText className="h-4 w-4 mr-2" />
-                    Case Study
-                  </a>
-                </Button>
-                <div className="flex gap-2">
-                  <Button variant="ghost" size="icon" asChild>
-                    <a href={project.links.github} aria-label="GitHub Repository">
-                      <Github className="h-4 w-4" />
-                    </a>
+                <CardHeader className="cursor-pointer">
+                  <CardTitle className="hover:text-primary transition-colors">{project.title}</CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag, tagIndex) => (
+                      <Badge key={tagIndex} variant="secondary" className="font-normal">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className="flex justify-between">
+                  <Button variant="outline" size="sm" asChild>
+                    <span>
+                      <FileText className="h-4 w-4 mr-2" />
+                      Case Study
+                    </span>
                   </Button>
-                  <Button variant="ghost" size="icon" asChild>
-                    <a href={project.links.demo} aria-label="Live Demo">
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
-                  </Button>
-                </div>
-              </CardFooter>
+                  <div className="flex gap-2">
+                    <Button variant="ghost" size="icon" asChild onClick={(e) => e.stopPropagation()}>
+                      <a href={project.links.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
+                        <Github className="h-4 w-4" />
+                      </a>
+                    </Button>
+                    <Button variant="ghost" size="icon" asChild onClick={(e) => e.stopPropagation()}>
+                      <a href={project.links.demo} target="_blank" rel="noopener noreferrer" aria-label="Live Demo">
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  </div>
+                </CardFooter>
+              </Link>
             </Card>
           ))}
         </div>

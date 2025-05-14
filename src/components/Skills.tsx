@@ -101,7 +101,6 @@ const Skills = () => {
                     <div key={index} className="space-y-2">
                       <div className="flex justify-between items-center">
                         <h4 className="font-medium">{skill.name}</h4>
-                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
                       </div>
                       <div className="h-2 bg-muted rounded-full overflow-hidden relative">
                         <div 
