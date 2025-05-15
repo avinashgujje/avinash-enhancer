@@ -1,50 +1,28 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { FileText, ArrowLeft, ExternalLink } from 'lucide-react';
+import { ArrowLeft, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
 
 const SdwanCaseStudy = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-12 max-w-5xl">
-        {/* Back Button */}
-        <div className="mb-8 flex justify-between">
-          <Button variant="ghost" asChild>
-            <Link to="/#projects">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Projects
-            </Link>
-          </Button>
-          <Button variant="default" className="bg-blue-500 hover:bg-blue-600" asChild>
-            <Link to="/#projects">
-              Back to Projects
-            </Link>
-          </Button>
-        </div>
-        
         {/* Header */}
         <div className="mb-8 border-b pb-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">High-Level Design: Global SD-WAN Cloud Architecture</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#eee]">Global SD-WAN Cloud Architecture</h1>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-muted-foreground">
             <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-0">
               <span className="mr-4">Date: 10/01/2020</span>
               <span className="mr-4">Author: Avinash Gujje – All Rights Reserved</span>
-              <div className="flex space-x-2 mt-2 sm:mt-0">
-                <Button variant="outline" size="sm" className="gap-2" asChild>
-                  <a href="https://github.com/avinashgujje" target="_blank" rel="noopener noreferrer">
-                    <FileText className="h-4 w-4" />
-                    GitHub
-                  </a>
-                </Button>
-                <Button variant="outline" size="sm" className="gap-2" asChild>
-                  <a href="https://www.linkedin.com/in/avinashgujje/" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="h-4 w-4" />
-                    Contact
-                  </a>
-                </Button>
-              </div>
+              <Button variant="outline" size="sm" className="gap-2 mt-2 sm:mt-0" asChild>
+                <a href="https://github.com/avinashgujje" target="_blank" rel="noopener noreferrer">
+                  <FileText className="h-4 w-4" />
+                  GitHub
+                </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -75,19 +53,16 @@ const SdwanCaseStudy = () => {
         {/* Main Content */}
         <div className="space-y-10">
           <section>
-            <h2 className="text-3xl font-semibold mb-4 flex items-center">
-              <span className="mr-2">📌</span>
-              <span>Overview</span>
-            </h2>
+            <h2 className="text-3xl font-semibold mb-4">Overview</h2>
             <p className="text-foreground/80 text-justify leading-relaxed">
               This architecture illustrates a Global Software-Defined Wide Area Network (SD-WAN) deployment leveraging a hybrid cloud model. It connects geographically distributed enterprise branches and data centers using a mix of MPLS, VPN over Internet, and SD-WAN tunnels to ensure optimized performance, secure connectivity, and centralized orchestration.
             </p>
           </section>
           
-          {/* Diagram Section - Centered and with hover effect */}
+          {/* Diagram Section - With updated styling */}
           <section className="my-12">
-            <div className="group relative">
-              <div className="overflow-hidden rounded-lg border-4 border-primary/20 transition-all duration-300 group-hover:border-primary/50 shadow-lg group-hover:shadow-primary/20">
+            <div className="w-[85%] mx-auto group">
+              <div className="overflow-hidden rounded-lg border border-primary/20 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-primary/20 hover:border-primary/50">
                 <AspectRatio ratio={16/9} className="w-full">
                   <img 
                     src="/lovable-uploads/859a4a0b-fc8c-459f-8679-0b0e54f5921a.png" 
@@ -104,10 +79,7 @@ const SdwanCaseStudy = () => {
           </section>
           
           <section>
-            <h2 className="text-3xl font-semibold mb-4 flex items-center">
-              <span className="mr-2">🎯</span>
-              <span>Business Objectives</span>
-            </h2>
+            <h2 className="text-3xl font-semibold mb-4">Business Objectives</h2>
             <ul className="list-none space-y-3 text-justify">
               <li className="flex">
                 <span className="text-primary mr-3">•</span>
@@ -125,10 +97,7 @@ const SdwanCaseStudy = () => {
           </section>
           
           <section>
-            <h2 className="text-3xl font-semibold mb-4 flex items-center">
-              <span className="mr-2">🧩</span>
-              <span>Key Components</span>
-            </h2>
+            <h2 className="text-3xl font-semibold mb-4">Key Components</h2>
             <div className="overflow-x-auto rounded-lg border border-border/50 bg-card/50 shadow-sm">
               <table className="min-w-full">
                 <thead>
@@ -168,10 +137,7 @@ const SdwanCaseStudy = () => {
           </section>
           
           <section>
-            <h2 className="text-3xl font-semibold mb-4 flex items-center">
-              <span className="mr-2">🌍</span>
-              <span>Global Site Distribution</span>
-            </h2>
+            <h2 className="text-3xl font-semibold mb-4">Global Site Distribution</h2>
             <p className="mb-4 text-foreground/80 text-justify">The architecture includes the following major nodes:</p>
             <div className="space-y-3 text-justify">
               <p><span className="font-semibold text-primary">Americas:</span> Toronto, Frisco-Colo, San Jose</p>
@@ -181,10 +147,7 @@ const SdwanCaseStudy = () => {
           </section>
           
           <section>
-            <h2 className="text-3xl font-semibold mb-4 flex items-center">
-              <span className="mr-2">🧠</span>
-              <span>Connectivity & Routing Strategy</span>
-            </h2>
+            <h2 className="text-3xl font-semibold mb-4">Connectivity & Routing Strategy</h2>
             <div className="space-y-6">
               <div className="bg-card/30 rounded-lg p-6 border-l-4 border-blue-500 hover:bg-card/50 transition-all">
                 <h3 className="text-xl font-medium mb-2">Primary Path</h3>
@@ -238,10 +201,7 @@ const SdwanCaseStudy = () => {
           </section>
           
           <section>
-            <h2 className="text-3xl font-semibold mb-4 flex items-center">
-              <span className="mr-2">☁️</span>
-              <span>Cloud Integration</span>
-            </h2>
+            <h2 className="text-3xl font-semibold mb-4">Cloud Integration</h2>
             <ul className="list-none space-y-3 text-justify">
               <li className="flex">
                 <span className="text-primary mr-3">•</span>
@@ -255,10 +215,7 @@ const SdwanCaseStudy = () => {
           </section>
           
           <section>
-            <h2 className="text-3xl font-semibold mb-4 flex items-center">
-              <span className="mr-2">🛡️</span>
-              <span>Security Considerations</span>
-            </h2>
+            <h2 className="text-3xl font-semibold mb-4">Security Considerations</h2>
             <ul className="list-none space-y-3 text-justify">
               <li className="flex">
                 <span className="text-primary mr-3">•</span>
@@ -276,10 +233,7 @@ const SdwanCaseStudy = () => {
           </section>
           
           <section>
-            <h2 className="text-3xl font-semibold mb-4 flex items-center">
-              <span className="mr-2">📈</span>
-              <span>Scalability and Resilience</span>
-            </h2>
+            <h2 className="text-3xl font-semibold mb-4">Scalability and Resilience</h2>
             <ul className="list-none space-y-3 text-justify">
               <li className="flex">
                 <span className="text-primary mr-3">•</span>
@@ -295,6 +249,15 @@ const SdwanCaseStudy = () => {
               </li>
             </ul>
           </section>
+          
+          {/* Back Button at bottom right */}
+          <div className="flex justify-end mt-12">
+            <Button variant="default" className="bg-blue-500 hover:bg-blue-600" asChild>
+              <Link to="/#projects">
+                Back to Projects
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
