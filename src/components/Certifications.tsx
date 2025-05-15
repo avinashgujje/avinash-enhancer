@@ -10,7 +10,7 @@ import {
   TableHeader,
   TableRow
 } from '@/components/ui/table';
-import { GraduationCap, Award, Certificate } from 'lucide-react';
+import { GraduationCap, Award, BadgeCheck } from 'lucide-react';
 
 const certifications = [
   {
@@ -144,7 +144,7 @@ const Certifications = () => {
           
           <div className="mt-6 text-center text-sm text-muted-foreground">
             <p className="flex items-center justify-center gap-1">
-              <Certificate className="h-4 w-4" />
+              <BadgeCheck className="h-4 w-4" />
               <span>All certifications have been verified by the issuing organization</span>
             </p>
           </div>
