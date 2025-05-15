@@ -59,21 +59,21 @@ const SdwanCaseStudy = () => {
             </p>
           </section>
           
-          {/* Diagram Section - With updated styling */}
+          {/* Diagram Section - With updated styling for zoom effect with overflow visible */}
           <section className="my-12">
-            <div className="w-[85%] mx-auto group">
-              <div className="overflow-hidden rounded-lg border border-primary/20 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-primary/20 hover:border-primary/50">
-                <AspectRatio ratio={16/9} className="w-full">
+            <div className="w-[85%] mx-auto">
+              <div className="overflow-visible rounded-lg border border-primary/20 shadow-md hover:shadow-lg hover:shadow-primary/20 hover:border-primary/50 transition-all duration-300">
+                <div className="overflow-visible"> 
                   <img 
                     src="/lovable-uploads/859a4a0b-fc8c-459f-8679-0b0e54f5921a.png" 
                     alt="SD-WAN Architecture Diagram" 
-                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-contain transition-transform duration-500 hover:scale-110"
                   />
-                </AspectRatio>
+                </div>
               </div>
               <div className="mt-3 text-center font-medium text-muted-foreground">
                 <p>SD-WAN Architecture Diagram</p>
-                <p className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">Click to view in full size</p>
+                <p className="text-sm opacity-0 hover:opacity-100 transition-opacity duration-300">Click to view in full size</p>
               </div>
             </div>
           </section>
